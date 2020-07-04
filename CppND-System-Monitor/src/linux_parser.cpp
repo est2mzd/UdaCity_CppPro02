@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "linux_parser.h"
+#include "my_utility.h"
 
 using std::stof;
 using std::string;
@@ -102,7 +103,30 @@ float LinuxParser::MemoryUtilization() {
 }
 
 // TODO: Read and return the system uptime
-long LinuxParser::UpTime() { return 0; }
+long LinuxParser::UpTime(){ 
+  string line, uptime, idletime;
+  vector<string> split_str;
+
+  // std::ifstream filestream(kMeminfoFilename); // open file
+  std::ifstream filestream("/proc/uptime"); // open file
+  
+  if (filestream.is_open()) {
+    // if file open is ok, do while.
+    while(std::getline(filestream, line)){
+      split_str = split(line, ' ');
+
+      // get key & value
+      if (split_str.size() == 2){
+        uptime   = split_str[0];
+        idletime = split_str[1];
+        return std::stod(uptime);
+      }
+    }
+  }
+  
+  return 0; 
+}
+
 
 // TODO: Read and return the number of jiffies for the system
 long LinuxParser::Jiffies() { return 0; }

@@ -14,32 +14,6 @@ using std::vector;
 #include <iostream>
 using std::cout;
 
-// DONE: An example of how to read data from the filesystem
-string LinuxParser::OperatingSystem() {
-  string line;
-  string key;
-  string value;
-  std::ifstream filestream(kOSPath);
-  if (filestream.is_open()) {
-    while (std::getline(filestream, line)) {
-      std::replace(line.begin(), line.end(), ' ', '_');
-      std::replace(line.begin(), line.end(), '=', ' ');
-      std::replace(line.begin(), line.end(), '"', ' ');
-      std::istringstream linestream(line);
-      while (linestream >> key >> value) {
-        if (key == "PRETTY_NAME") {
-          std::replace(value.begin(), value.end(), '_', ' ');
-          return value;
-        }
-      }
-    }
-  }
-  return value;
-}
-
-
-
-
 // TODO: Read and return the system memory utilization
 float LinuxParser::MemoryUtilization() { 
   string line, key, value;
