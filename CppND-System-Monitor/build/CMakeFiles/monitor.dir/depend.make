@@ -6,12 +6,16 @@ CMakeFiles/monitor.dir/src/format.cpp.o: ../src/format.cpp
 
 CMakeFiles/monitor.dir/src/linux_parser.cpp.o: ../include/linux_parser.h
 CMakeFiles/monitor.dir/src/linux_parser.cpp.o: ../src/linux_parser.cpp
+CMakeFiles/monitor.dir/src/linux_parser.cpp.o: ../src/my_utility.h
 
 CMakeFiles/monitor.dir/src/main.cpp.o: ../include/ncurses_display.h
 CMakeFiles/monitor.dir/src/main.cpp.o: ../include/process.h
 CMakeFiles/monitor.dir/src/main.cpp.o: ../include/processor.h
 CMakeFiles/monitor.dir/src/main.cpp.o: ../include/system.h
 CMakeFiles/monitor.dir/src/main.cpp.o: ../src/main.cpp
+
+CMakeFiles/monitor.dir/src/my_utility.cpp.o: ../src/my_utility.cpp
+CMakeFiles/monitor.dir/src/my_utility.cpp.o: ../src/my_utility.h
 
 CMakeFiles/monitor.dir/src/ncurses_display.cpp.o: ../include/format.h
 CMakeFiles/monitor.dir/src/ncurses_display.cpp.o: ../include/ncurses_display.h
@@ -30,4 +34,16 @@ CMakeFiles/monitor.dir/src/system.cpp.o: ../include/process.h
 CMakeFiles/monitor.dir/src/system.cpp.o: ../include/processor.h
 CMakeFiles/monitor.dir/src/system.cpp.o: ../include/system.h
 CMakeFiles/monitor.dir/src/system.cpp.o: ../src/system.cpp
+
+CMakeFiles/monitor.dir/src/test01.cpp.o: ../include/linux_parser.h
+CMakeFiles/monitor.dir/src/test01.cpp.o: ../src/my_utility.h
+CMakeFiles/monitor.dir/src/test01.cpp.o: ../src/test01.cpp
+
+CMakeFiles/monitor.dir/src/test02.cpp.o: ../include/linux_parser.h
+CMakeFiles/monitor.dir/src/test02.cpp.o: ../src/my_utility.h
+CMakeFiles/monitor.dir/src/test02.cpp.o: ../src/test02.cpp
+
+CMakeFiles/monitor.dir/src/test03.cpp.o: ../include/linux_parser.h
+CMakeFiles/monitor.dir/src/test03.cpp.o: ../src/my_utility.h
+CMakeFiles/monitor.dir/src/test03.cpp.o: ../src/test03.cpp
 

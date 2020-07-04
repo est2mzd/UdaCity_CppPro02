@@ -34,6 +34,7 @@ string LinuxParser::OperatingSystem() {
   return value;
 }
 
+
 // DONE: An example of how to read data from the filesystem
 string LinuxParser::Kernel() {
   string os, kernel;
@@ -46,6 +47,8 @@ string LinuxParser::Kernel() {
   }
   return kernel;
 }
+
+
 
 // BONUS: Update this to use std::filesystem
 vector<int> LinuxParser::Pids() {
@@ -67,10 +70,14 @@ vector<int> LinuxParser::Pids() {
   return pids;
 }
 
+
+
 // TODO: Read and return the system memory utilization
 float LinuxParser::MemoryUtilization() { 
-  string line, key, value;
+  string line;
   vector<string> split_str;
+  float mem_total, mem_available, mem_used;
+  float mem_utilization;
 
   // std::ifstream filestream(kMeminfoFilename); // open file
   std::ifstream filestream("/proc/meminfo"); // open file
@@ -89,11 +96,15 @@ float LinuxParser::MemoryUtilization() {
 
           // get key & value
           if (split_str.size() == 2){
-            key   = split_str[0];
-            value = trim_rear(split_str[1],2);
+            if (split_str[0]=="MemTotal"){
+              mem_total = std::stof(trim_rear(split_str[1],2));
+            }
+            if (split_str[0]=="MemAvailable"){
+              mem_available = std::stof(trim_rear(split_str[1],2));
+              mem_used      = mem_total - mem_available;
+              mem_utilization = (float)(mem_used/mem_available);
 
-            if (key=="MemTotal"){
-              return std::stof(value);
+              return mem_utilization;
             }
           }
       }
@@ -101,6 +112,7 @@ float LinuxParser::MemoryUtilization() {
   }
   return 0.0; 
 }
+
 
 // TODO: Read and return the system uptime
 long LinuxParser::UpTime(){ 
@@ -128,8 +140,11 @@ long LinuxParser::UpTime(){
 }
 
 
+
 // TODO: Read and return the number of jiffies for the system
-long LinuxParser::Jiffies() { return 0; }
+long LinuxParser::Jiffies() { 
+  return LinuxParser::UpTime() * sysconf(_SC_CLK_TCK); 
+}
 
 // TODO: Read and return the number of active jiffies for a PID
 // REMOVE: [[maybe_unused]] once you define the function
@@ -141,14 +156,54 @@ long LinuxParser::ActiveJiffies() { return 0; }
 // TODO: Read and return the number of idle jiffies for the system
 long LinuxParser::IdleJiffies() { return 0; }
 
+
+
+
 // TODO: Read and return CPU utilization
-vector<string> LinuxParser::CpuUtilization() { return {}; }
+float LinuxParser::CpuUtilization() { 
+  string line;
+  vector<string> split_str;
+  float user, nice, system, idle, iowait, irq, softirq, steal, guest, guest_nice;
+  float sum_idle, sum_non_idle, total;
+  float cpu_util;
+
+  std::ifstream filestream("/proc/stat");
+
+  if (filestream.is_open()){
+    while(std::getline(filestream, line)){
+      split_str = split(line, ' ');
+      if (split_str[0] == "cpu"){
+        user   = std::stof(split_str[1]);
+        nice   = std::stof(split_str[2]);
+        system = std::stof(split_str[3]);
+        idle   = std::stof(split_str[4]);
+        iowait = std::stof(split_str[5]);
+        irq    = std::stof(split_str[6]);
+        softirq= std::stof(split_str[7]);
+        steal  = std::stof(split_str[8]);
+        guest  = std::stof(split_str[9]);
+        guest_nice= std::stof(split_str[10]);
+        //
+        sum_idle     = idle + iowait;
+        sum_non_idle = user + nice + system + irq + softirq + steal;
+        total        = sum_idle + sum_non_idle;
+        cpu_util     = (total - sum_idle) / total;
+        
+        return cpu_util;
+      }
+    }
+  }
+  return 0.0; 
+}
 
 // TODO: Read and return the total number of processes
 int LinuxParser::TotalProcesses() { return 0; }
 
 // TODO: Read and return the number of running processes
 int LinuxParser::RunningProcesses() { return 0; }
+
+
+
 
 // TODO: Read and return the command associated with a process
 // REMOVE: [[maybe_unused]] once you define the function

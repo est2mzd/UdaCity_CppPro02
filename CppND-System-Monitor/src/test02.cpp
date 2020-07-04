@@ -1,3 +1,4 @@
+/*
 #include <dirent.h>
 #include <unistd.h>
 #include <string>
@@ -44,3 +45,4 @@ int main(){
     cout << "out = " << out << "\n";
     return 0;
 }
+*/

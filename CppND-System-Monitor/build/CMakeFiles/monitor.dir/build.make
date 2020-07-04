@@ -96,9 +96,22 @@ CMakeFiles/monitor.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monitor.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/takuya/work/CppProject_02/CppND-System-Monitor/src/main.cpp -o CMakeFiles/monitor.dir/src/main.cpp.s
 
+CMakeFiles/monitor.dir/src/my_utility.cpp.o: CMakeFiles/monitor.dir/flags.make
+CMakeFiles/monitor.dir/src/my_utility.cpp.o: ../src/my_utility.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/monitor.dir/src/my_utility.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/my_utility.cpp.o -c /home/takuya/work/CppProject_02/CppND-System-Monitor/src/my_utility.cpp
+
+CMakeFiles/monitor.dir/src/my_utility.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monitor.dir/src/my_utility.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/takuya/work/CppProject_02/CppND-System-Monitor/src/my_utility.cpp > CMakeFiles/monitor.dir/src/my_utility.cpp.i
+
+CMakeFiles/monitor.dir/src/my_utility.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monitor.dir/src/my_utility.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/takuya/work/CppProject_02/CppND-System-Monitor/src/my_utility.cpp -o CMakeFiles/monitor.dir/src/my_utility.cpp.s
+
 CMakeFiles/monitor.dir/src/ncurses_display.cpp.o: CMakeFiles/monitor.dir/flags.make
 CMakeFiles/monitor.dir/src/ncurses_display.cpp.o: ../src/ncurses_display.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/monitor.dir/src/ncurses_display.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/monitor.dir/src/ncurses_display.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/ncurses_display.cpp.o -c /home/takuya/work/CppProject_02/CppND-System-Monitor/src/ncurses_display.cpp
 
 CMakeFiles/monitor.dir/src/ncurses_display.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/monitor.dir/src/ncurses_display.cpp.s: cmake_force
 
 CMakeFiles/monitor.dir/src/process.cpp.o: CMakeFiles/monitor.dir/flags.make
 CMakeFiles/monitor.dir/src/process.cpp.o: ../src/process.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/monitor.dir/src/process.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/monitor.dir/src/process.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/process.cpp.o -c /home/takuya/work/CppProject_02/CppND-System-Monitor/src/process.cpp
 
 CMakeFiles/monitor.dir/src/process.cpp.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/monitor.dir/src/process.cpp.s: cmake_force
 
 CMakeFiles/monitor.dir/src/processor.cpp.o: CMakeFiles/monitor.dir/flags.make
 CMakeFiles/monitor.dir/src/processor.cpp.o: ../src/processor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/monitor.dir/src/processor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/monitor.dir/src/processor.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/processor.cpp.o -c /home/takuya/work/CppProject_02/CppND-System-Monitor/src/processor.cpp
 
 CMakeFiles/monitor.dir/src/processor.cpp.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/monitor.dir/src/processor.cpp.s: cmake_force
 
 CMakeFiles/monitor.dir/src/system.cpp.o: CMakeFiles/monitor.dir/flags.make
 CMakeFiles/monitor.dir/src/system.cpp.o: ../src/system.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/monitor.dir/src/system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/monitor.dir/src/system.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/system.cpp.o -c /home/takuya/work/CppProject_02/CppND-System-Monitor/src/system.cpp
 
 CMakeFiles/monitor.dir/src/system.cpp.i: cmake_force
@@ -148,15 +161,58 @@ CMakeFiles/monitor.dir/src/system.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monitor.dir/src/system.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/takuya/work/CppProject_02/CppND-System-Monitor/src/system.cpp -o CMakeFiles/monitor.dir/src/system.cpp.s
 
+CMakeFiles/monitor.dir/src/test01.cpp.o: CMakeFiles/monitor.dir/flags.make
+CMakeFiles/monitor.dir/src/test01.cpp.o: ../src/test01.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/monitor.dir/src/test01.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/test01.cpp.o -c /home/takuya/work/CppProject_02/CppND-System-Monitor/src/test01.cpp
+
+CMakeFiles/monitor.dir/src/test01.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monitor.dir/src/test01.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/takuya/work/CppProject_02/CppND-System-Monitor/src/test01.cpp > CMakeFiles/monitor.dir/src/test01.cpp.i
+
+CMakeFiles/monitor.dir/src/test01.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monitor.dir/src/test01.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/takuya/work/CppProject_02/CppND-System-Monitor/src/test01.cpp -o CMakeFiles/monitor.dir/src/test01.cpp.s
+
+CMakeFiles/monitor.dir/src/test02.cpp.o: CMakeFiles/monitor.dir/flags.make
+CMakeFiles/monitor.dir/src/test02.cpp.o: ../src/test02.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/monitor.dir/src/test02.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/test02.cpp.o -c /home/takuya/work/CppProject_02/CppND-System-Monitor/src/test02.cpp
+
+CMakeFiles/monitor.dir/src/test02.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monitor.dir/src/test02.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/takuya/work/CppProject_02/CppND-System-Monitor/src/test02.cpp > CMakeFiles/monitor.dir/src/test02.cpp.i
+
+CMakeFiles/monitor.dir/src/test02.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monitor.dir/src/test02.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/takuya/work/CppProject_02/CppND-System-Monitor/src/test02.cpp -o CMakeFiles/monitor.dir/src/test02.cpp.s
+
+CMakeFiles/monitor.dir/src/test03.cpp.o: CMakeFiles/monitor.dir/flags.make
+CMakeFiles/monitor.dir/src/test03.cpp.o: ../src/test03.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/monitor.dir/src/test03.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/test03.cpp.o -c /home/takuya/work/CppProject_02/CppND-System-Monitor/src/test03.cpp
+
+CMakeFiles/monitor.dir/src/test03.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monitor.dir/src/test03.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/takuya/work/CppProject_02/CppND-System-Monitor/src/test03.cpp > CMakeFiles/monitor.dir/src/test03.cpp.i
+
+CMakeFiles/monitor.dir/src/test03.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monitor.dir/src/test03.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/takuya/work/CppProject_02/CppND-System-Monitor/src/test03.cpp -o CMakeFiles/monitor.dir/src/test03.cpp.s
+
 # Object files for target monitor
 monitor_OBJECTS = \
 "CMakeFiles/monitor.dir/src/format.cpp.o" \
 "CMakeFiles/monitor.dir/src/linux_parser.cpp.o" \
 "CMakeFiles/monitor.dir/src/main.cpp.o" \
+"CMakeFiles/monitor.dir/src/my_utility.cpp.o" \
 "CMakeFiles/monitor.dir/src/ncurses_display.cpp.o" \
 "CMakeFiles/monitor.dir/src/process.cpp.o" \
 "CMakeFiles/monitor.dir/src/processor.cpp.o" \
-"CMakeFiles/monitor.dir/src/system.cpp.o"
+"CMakeFiles/monitor.dir/src/system.cpp.o" \
+"CMakeFiles/monitor.dir/src/test01.cpp.o" \
+"CMakeFiles/monitor.dir/src/test02.cpp.o" \
+"CMakeFiles/monitor.dir/src/test03.cpp.o"
 
 # External object files for target monitor
 monitor_EXTERNAL_OBJECTS =
@@ -164,15 +220,19 @@ monitor_EXTERNAL_OBJECTS =
 monitor: CMakeFiles/monitor.dir/src/format.cpp.o
 monitor: CMakeFiles/monitor.dir/src/linux_parser.cpp.o
 monitor: CMakeFiles/monitor.dir/src/main.cpp.o
+monitor: CMakeFiles/monitor.dir/src/my_utility.cpp.o
 monitor: CMakeFiles/monitor.dir/src/ncurses_display.cpp.o
 monitor: CMakeFiles/monitor.dir/src/process.cpp.o
 monitor: CMakeFiles/monitor.dir/src/processor.cpp.o
 monitor: CMakeFiles/monitor.dir/src/system.cpp.o
+monitor: CMakeFiles/monitor.dir/src/test01.cpp.o
+monitor: CMakeFiles/monitor.dir/src/test02.cpp.o
+monitor: CMakeFiles/monitor.dir/src/test03.cpp.o
 monitor: CMakeFiles/monitor.dir/build.make
 monitor: /usr/lib/x86_64-linux-gnu/libcurses.so
 monitor: /usr/lib/x86_64-linux-gnu/libform.so
 monitor: CMakeFiles/monitor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable monitor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable monitor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/monitor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

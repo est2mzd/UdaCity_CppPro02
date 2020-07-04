@@ -1,3 +1,4 @@
+
 #include <dirent.h>
 #include <unistd.h>
 #include <string>
@@ -14,33 +15,45 @@ using std::vector;
 #include <iostream>
 using std::cout;
 
-// TODO: Read and return the system uptime
-long LinuxParser::UpTime(){ 
-  string line, uptime, idletime;
+// TODO: Read and return CPU utilization
+float LinuxParser::CpuUtilization() { 
+  string line;
   vector<string> split_str;
+  float user, nice, system, idle, iowait, irq, softirq, steal, guest, guest_nice;
+  float sum_idle, sum_non_idle, total;
+  float cpu_util;
 
-  // std::ifstream filestream(kMeminfoFilename); // open file
-  std::ifstream filestream("/proc/uptime"); // open file
-  
-  if (filestream.is_open()) {
-    // if file open is ok, do while.
+  std::ifstream filestream("/proc/stat");
+
+  if (filestream.is_open()){
     while(std::getline(filestream, line)){
       split_str = split(line, ' ');
-
-      // get key & value
-      if (split_str.size() == 2){
-        uptime   = split_str[0];
-        idletime = split_str[1];
-        return std::stod(uptime);
+      if (split_str[0] == "cpu"){
+        user   = std::stof(split_str[1]);
+        nice   = std::stof(split_str[2]);
+        system = std::stof(split_str[3]);
+        idle   = std::stof(split_str[4]);
+        iowait = std::stof(split_str[5]);
+        irq    = std::stof(split_str[6]);
+        softirq= std::stof(split_str[7]);
+        steal  = std::stof(split_str[8]);
+        guest  = std::stof(split_str[9]);
+        guest_nice= std::stof(split_str[10]);
+        //
+        sum_idle = idle + iowait;
+        sum_non_idle = user + nice + system + irq + softirq + steal;
+        total = sum_idle + sum_non_idle;
+        cpu_util = (total - sum_idle) / total;
+        //cout << "cpu_utile = " << cpu_util << "\n";
+        return cpu_util;
       }
     }
   }
-
-  return 0; 
+  return 0.0; 
 }
 
 int main(){
-    long out = LinuxParser::UpTime();
-    cout << "out = " << out << "\n";
+    vector<string> out = LinuxParser::CpuUtilization();
+    // cout << "out = " << out << "\n";
     return 0;
 }

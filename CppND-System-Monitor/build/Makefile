@@ -204,6 +204,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/my_utility.o: src/my_utility.cpp.o
+
+.PHONY : src/my_utility.o
+
+# target to build an object file
+src/my_utility.cpp.o:
+	$(MAKE) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/my_utility.cpp.o
+.PHONY : src/my_utility.cpp.o
+
+src/my_utility.i: src/my_utility.cpp.i
+
+.PHONY : src/my_utility.i
+
+# target to preprocess a source file
+src/my_utility.cpp.i:
+	$(MAKE) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/my_utility.cpp.i
+.PHONY : src/my_utility.cpp.i
+
+src/my_utility.s: src/my_utility.cpp.s
+
+.PHONY : src/my_utility.s
+
+# target to generate assembly for a file
+src/my_utility.cpp.s:
+	$(MAKE) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/my_utility.cpp.s
+.PHONY : src/my_utility.cpp.s
+
 src/ncurses_display.o: src/ncurses_display.cpp.o
 
 .PHONY : src/ncurses_display.o
@@ -312,6 +339,87 @@ src/system.cpp.s:
 	$(MAKE) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/system.cpp.s
 .PHONY : src/system.cpp.s
 
+src/test01.o: src/test01.cpp.o
+
+.PHONY : src/test01.o
+
+# target to build an object file
+src/test01.cpp.o:
+	$(MAKE) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/test01.cpp.o
+.PHONY : src/test01.cpp.o
+
+src/test01.i: src/test01.cpp.i
+
+.PHONY : src/test01.i
+
+# target to preprocess a source file
+src/test01.cpp.i:
+	$(MAKE) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/test01.cpp.i
+.PHONY : src/test01.cpp.i
+
+src/test01.s: src/test01.cpp.s
+
+.PHONY : src/test01.s
+
+# target to generate assembly for a file
+src/test01.cpp.s:
+	$(MAKE) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/test01.cpp.s
+.PHONY : src/test01.cpp.s
+
+src/test02.o: src/test02.cpp.o
+
+.PHONY : src/test02.o
+
+# target to build an object file
+src/test02.cpp.o:
+	$(MAKE) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/test02.cpp.o
+.PHONY : src/test02.cpp.o
+
+src/test02.i: src/test02.cpp.i
+
+.PHONY : src/test02.i
+
+# target to preprocess a source file
+src/test02.cpp.i:
+	$(MAKE) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/test02.cpp.i
+.PHONY : src/test02.cpp.i
+
+src/test02.s: src/test02.cpp.s
+
+.PHONY : src/test02.s
+
+# target to generate assembly for a file
+src/test02.cpp.s:
+	$(MAKE) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/test02.cpp.s
+.PHONY : src/test02.cpp.s
+
+src/test03.o: src/test03.cpp.o
+
+.PHONY : src/test03.o
+
+# target to build an object file
+src/test03.cpp.o:
+	$(MAKE) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/test03.cpp.o
+.PHONY : src/test03.cpp.o
+
+src/test03.i: src/test03.cpp.i
+
+.PHONY : src/test03.i
+
+# target to preprocess a source file
+src/test03.cpp.i:
+	$(MAKE) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/test03.cpp.i
+.PHONY : src/test03.cpp.i
+
+src/test03.s: src/test03.cpp.s
+
+.PHONY : src/test03.s
+
+# target to generate assembly for a file
+src/test03.cpp.s:
+	$(MAKE) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/test03.cpp.s
+.PHONY : src/test03.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -330,6 +438,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/my_utility.o"
+	@echo "... src/my_utility.i"
+	@echo "... src/my_utility.s"
 	@echo "... src/ncurses_display.o"
 	@echo "... src/ncurses_display.i"
 	@echo "... src/ncurses_display.s"
@@ -342,6 +453,15 @@ help:
 	@echo "... src/system.o"
 	@echo "... src/system.i"
 	@echo "... src/system.s"
+	@echo "... src/test01.o"
+	@echo "... src/test01.i"
+	@echo "... src/test01.s"
+	@echo "... src/test02.o"
+	@echo "... src/test02.i"
+	@echo "... src/test02.s"
+	@echo "... src/test03.o"
+	@echo "... src/test03.i"
+	@echo "... src/test03.s"
 .PHONY : help
 
 
