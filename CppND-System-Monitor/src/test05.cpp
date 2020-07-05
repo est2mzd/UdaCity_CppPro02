@@ -1,3 +1,4 @@
+/*
 #include <dirent.h>
 #include <unistd.h>
 #include <string>
@@ -56,3 +57,4 @@ int main(){
     // RunningProcesses
     cout << "RunningProcesses = " << LinuxParser::RunningProcesses() << "\n";
 }
+*/
