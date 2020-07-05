@@ -49,7 +49,6 @@ string LinuxParser::Kernel() {
 }
 
 
-
 // BONUS: Update this to use std::filesystem
 vector<int> LinuxParser::Pids() {
   vector<int> pids;
@@ -69,7 +68,6 @@ vector<int> LinuxParser::Pids() {
   closedir(directory);
   return pids;
 }
-
 
 
 // TODO: Read and return the system memory utilization
@@ -148,13 +146,85 @@ long LinuxParser::Jiffies() {
 
 // TODO: Read and return the number of active jiffies for a PID
 // REMOVE: [[maybe_unused]] once you define the function
-long LinuxParser::ActiveJiffies(int pid[[maybe_unused]]) { return 0; }
+long LinuxParser::ActiveJiffies(int pid) {
+    vector<string> split_str;
+    string line;
+    string file_path = "/proc/" + std::to_string(pid) + "/stat";
+    long utime, stime, cutime, cstime, active_jiffies;
+    std::ifstream filestream(file_path);
+
+    if (filestream.is_open()){
+        while(std::getline(filestream, line)){
+            split_str = split(line, ' ');
+
+            if (split_str.size() >= 17 ){
+                utime  = std::stol(split_str[13]);
+                stime  = std::stol(split_str[14]);
+                cutime = std::stol(split_str[15]);
+                cstime = std::stol(split_str[16]);
+                active_jiffies = utime + stime + cutime + cstime;
+
+                return active_jiffies;
+            }
+        }
+    }
+
+    return 0; 
+}
 
 // TODO: Read and return the number of active jiffies for the system
-long LinuxParser::ActiveJiffies() { return 0; }
+long LinuxParser::ActiveJiffies() { 
+    vector<string> split_str;
+    string line;
+    long active_jiffies = 0;
+    std::ifstream filestream("/proc/stat");
+
+    if(filestream.is_open()){
+        while(std::getline(filestream, line)){
+            split_str = split(line, ' ');
+            if (split_str.size() == 11){
+
+                if (split_str[0] == "cpu"){
+                    for(int i=1; i<=10; i++ ){
+                        // sum of all values without idle & iowait
+                        if ( (i!=4) && (i!=5)){
+                            active_jiffies += std::stol(split_str[i]);
+                        }
+                    }
+                    return active_jiffies;
+                }
+            }
+        }
+    }
+    return 0; 
+}
 
 // TODO: Read and return the number of idle jiffies for the system
-long LinuxParser::IdleJiffies() { return 0; }
+long LinuxParser::IdleJiffies() {
+    vector<string> split_str;
+    string line;
+    long active_jiffies = 0;
+    std::ifstream filestream("/proc/stat");
+
+    if(filestream.is_open()){
+        while(std::getline(filestream, line)){
+            split_str = split(line, ' ');
+            if (split_str.size() == 11){
+
+                if (split_str[0] == "cpu"){
+                    for(int i=1; i<=10; i++ ){
+                        // sum of 2 values which are idle & iowait
+                        if ( (i==4) || (i==5)){
+                            active_jiffies += std::stol(split_str[i]);
+                        }
+                    }
+                    return active_jiffies;
+                }
+            }
+        }
+    }
+    return 0; 
+}
 
 
 
@@ -197,10 +267,40 @@ float LinuxParser::CpuUtilization() {
 }
 
 // TODO: Read and return the total number of processes
-int LinuxParser::TotalProcesses() { return 0; }
+int LinuxParser::TotalProcesses() { 
+    vector<string> split_str;
+    string line;
+    std::ifstream filestream("/proc/stat");
+
+    if(filestream.is_open()){
+        while(std::getline(filestream, line)){
+            int pos = line.find("processes ");
+            if (pos != string::npos){
+                split_str = split(line, ' ');
+                return std::stoi(split_str[1]);
+            }
+        }
+    }
+    return 0; 
+}
 
 // TODO: Read and return the number of running processes
-int LinuxParser::RunningProcesses() { return 0; }
+int LinuxParser::RunningProcesses() {
+    vector<string> split_str;
+    string line;
+    std::ifstream filestream("/proc/stat");
+
+    if(filestream.is_open()){
+        while(std::getline(filestream, line)){
+            int pos = line.find("procs_running ");
+            if (pos != string::npos){
+                split_str = split(line, ' ');
+                return std::stoi(split_str[1]);
+            }
+        }
+    }
+    return 0; 
+}
 
 
 
