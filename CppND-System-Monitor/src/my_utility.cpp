@@ -32,10 +32,10 @@ vector<string> split(const string &s, char delimiter)
 string del_space(string input){
   int pos = 1;
 
-  while(pos != string::npos){
+  while(pos != (int)string::npos){
     pos = input.find(" ");
 
-    if (pos != string::npos){
+    if (pos != (int)string::npos){
         input = input.erase(pos,1);
         }
     else{
