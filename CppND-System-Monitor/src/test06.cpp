@@ -1,3 +1,4 @@
+/*
 #include <dirent.h>
 #include <unistd.h>
 #include <string>
@@ -75,19 +76,56 @@ int LinuxParser::Uid(int pid) {
 
 // TODO: Read and return the user associated with a process
 // REMOVE: [[maybe_unused]] once you define the function
-string LinuxParser::User(int pid[[maybe_unused]]) { return string(); }
+string LinuxParser::User(int pid) { 
+    vector<string> split_str;
+    string line;
+    string uid = std::to_string(LinuxParser::Uid(pid));
+    string file_path = "/etc/passwd";
+    std::ifstream filestream(file_path);
+
+    if(filestream.is_open()){
+        while(std::getline(filestream, line)){
+            // cout << "line = " << line << "\n";
+            split_str = split(line, ':');
+            
+            if (split_str.size() >= 3){
+                if (split_str[2] == uid){
+                    return split_str[0];
+                }
+            }
+        }
+    }
+
+    return "_"; 
+}
 
 // TODO: Read and return the uptime of a process
 // REMOVE: [[maybe_unused]] once you define the function
-long LinuxParser::UpTime(int pid[[maybe_unused]]) { return 0; }
+long LinuxParser::UpTime(int pid) { 
+    vector<string> split_str;
+    string line;
+    string file_path = "/proc/" + std::to_string(pid) + "/stat";
+    std::ifstream filestream(file_path);
+    if (filestream.is_open()){
+        while(std::getline(filestream, line)){
+            split_str = split(line, ' ');
+            if (split_str.size() >= 22){
+                return std::stol(split_str[21]);
+            }
+        }
+    }
+    return 0; 
+}
 
 
 int main(){
-    int pid = 4919;
-    // cout << "command = " << LinuxParser::Command(pid) << "\n";
-    // cout << "ram     = " << LinuxParser::Ram(pid)<< "\n";
-    // cout << "uid     = " << LinuxParser::Uid(pid)<< "\n";
-    int out = LinuxParser::Uid(pid);
+    int pid = 3150;
+    cout << "command = " << LinuxParser::Command(pid) << "\n";
+    cout << "ram     = " << LinuxParser::Ram(pid) << "\n";
+    cout << "uid     = " << LinuxParser::Uid(pid) << "\n";
+    cout << "user    = " << LinuxParser::User(pid) << "\n";
+    cout << "uptime  = " << LinuxParser::UpTime(pid) << "\n";
+    // int out = LinuxParser::Uid(pid);
     // string line = "Uid:  1000    1000    1000    1000";
     // vector<string> split_str = split(line, ' ');
     // cout << "SIZE=" << split_str.size() << "\n";
@@ -95,5 +133,6 @@ int main(){
     //     cout << split_str[i] <<"\n";
     // }
 
-    cout << "out = " << out << "\n";
+    // cout << "out = " << out << "\n";
 }
+*/
