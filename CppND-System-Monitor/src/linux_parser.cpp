@@ -44,13 +44,14 @@ string LinuxParser::Kernel() {
   if (stream.is_open()) {
     std::getline(stream, line);
     //-------------------------------------
-    if (1){
+    if (0){
       std::istringstream linestream(line);
       linestream >> os >> kernel;
       output = kernel;
     }else{
       split_str = split(line, ' ');
-      output = (split_str[8] + split_str[9]);
+    //output = (split_str[8] + split_str[9]);
+      output = trim_rear(split_str[9],2);
     }
     //-------------------------------------
   }
@@ -404,13 +405,16 @@ string LinuxParser::User(int pid) {
 long LinuxParser::UpTime(int pid) { 
     vector<string> split_str;
     string line;
+    long output;
     string file_path = "/proc/" + std::to_string(pid) + "/stat";
     std::ifstream filestream(file_path);
     if (filestream.is_open()){
         while(std::getline(filestream, line)){
             split_str = split(line, ' ');
             if (split_str.size() >= 22){
-                return std::stol(split_str[21]);
+              //output = std::stol(split_str[21]) - LinuxParser::UpTime();
+                output = LinuxParser::UpTime() - std::stol(split_str[21])/ sysconf(_SC_CLK_TCK);
+                return output;
             }
         }
     }

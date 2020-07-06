@@ -31,7 +31,7 @@ float Process::CpuUtilization() {
 string Process::Command() { return LinuxParser::Command(pid); }
 
 // TODO: Return this process's memory utilization
-string Process::Ram() { return std::to_string((int)(LinuxParser::Ram(pid)/1000)); }
+string Process::Ram() { return std::to_string((int)(LinuxParser::Ram(pid)/1024)); }
 
 // TODO: Return the user (name) that generated this process
 string Process::User() { return LinuxParser::User(pid); }
