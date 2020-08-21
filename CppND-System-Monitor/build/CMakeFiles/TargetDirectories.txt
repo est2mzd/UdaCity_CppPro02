@@ -1,3 +1,0 @@
-/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles/rebuild_cache.dir
-/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles/monitor.dir
-/home/takuya/work/CppProject_02/CppND-System-Monitor/build/CMakeFiles/edit_cache.dir
